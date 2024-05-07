@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Adobohomerecent.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <title>Home Page</title>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="Adobohomerecent.html">
+          <img src="Logo.png" alt="logo" class="logo">
+          <span>O'Chill</span>
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a class="activeClass" href="#hero-section"><span data-translate="home">Home</span></a></li>
+          <li><a href="#category-section"><span data-translate="categories">Categories</span></a></li>
+          <li><a href="#slider"><span data-translate="recipe">Recipe</span></a></li>
+          <li><a href="#blog"><span data-translate="blog">Blog</span></a></li>
+          <li><a href="#contact-section"><span data-translate="contact">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="language-toggle" onclick="toggleLanguageMenu()">
+        <span class="lang-button">Language &#x25BC;</span>
+        <ul class="lang-menu">
+            <li><span class="lang-option" onclick="changeLanguageAndToggleText('en')">English</span></li>
+            <li><span class="lang-option" onclick="changeLanguageAndToggleText('ja')">日本語</span></li>
+        </ul>
+      </div>
+      <div class="search-container">
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="suggestions-recent-container">
+          <div class="suggestions-container"></div>
+          <div class="recent-searches-container">
+            <h3>Recent Searches</h3>
+            <ul class="recent-searches-list">
+            </ul>
+          </div>
+        </div>
+        <dialog id="myModal" class="modal">
+          <div class="modal-content">
+            <p>Are you sure you want to remove this search term?</p>
+            <div class="modal-buttons">
+              <button id="confirmDelete">Yes</button>
+              <button id="cancelDelete">Cancel</button>
+            </div>
+          </div>
+        </dialog>        
+      </div>
+      
+    </div>
+  </header>
+
+  <main>
+    <div class="main-container" id="main-content">
+      <section class="hero-section" id="hero-section">
+        <div class="content-container">
+          <article class="text-container">
+            <div class="text-content">
+              <h1 data-translate="spicy_delicious_chicken_adobo">Spicy Delicious <br> Chicken Adobo</h1>
+              <p data-translate="lorem_ipsum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque a, quo et nam aliquid alias iusto minima dignissimos harum praesentium labore.</p>
+            </div>
+            <div class="description-container">
+              <div class="clock-container">
+                <i class="fa-solid fa-clock"></i>
+                <span>30 Minutes</span>
+              </div>
+              <div class="category-container">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Chicken</span>
+              </div>
+            </div>
+            <div class="creator-wrapper">
+              <img class="creator" src="Jasmin.jpg" alt="creator">
+              <div class="creator-container">
+                <span class="name">John Smith</span>
+                <span>15 March 2022</span>
+              </div>
+              <div class="btn">
+                <a href="Adobo (1).html" target="_blank">View Recipes &rarr;</a>
+              </div>
+            </div>
+          </article>
+          <article class="image-container">
+            <img src="Adobohome.jpg" alt="hero-image">
+          </article>
+        </div>
+      </section>
+
+      <section class="category reveal" id="category-section">
+        <div class="category-content">
+          <h1 data-translate="categories">Categories</h1>
+          <a href="#">View all categories</a>
+        </div> 
+        <article class="category-container">
+          <div class="category-card breakfast-card" id="breakfast-card">
+            <span data-translate="breakfast">Breakfast</span>
+          </div>
+          <div class="category-card lunch-card" id="lunch-card">
+            <span data-translate="lunch">Lunch</span>
+          </div>
+          <div class="category-card dessert-card" id="dessert-card">
+            <span data-translate="dessert">Dessert</span>
+          </div>
+          <div class="category-card vegan-card" id="vegan-card">
+            <span data-translate="vegan">Vegan</span>
+          </div>
+          <div class="category-card chocolate-card" id="chocolate-card">
+            <span data-translate="chocolate">Chocolate</span>
+          </div>
+          <div class="category-card meat-card" id="meat-card">
+            <span data-translate="meat">Meat</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="category-section reveal" id="category">
+        <article>
+          <div class="category-container-image" id="slider">
+            <span data-translate="popular_recipes">Popular Recipes</span>
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card recipe1" id="recipe1">
+            <div class="front-card">
+              <h1 data-translate="cake">Cake</h1>
+              <h2 data-translate="view_all_recipe">View all Recipe</h2>
+            </div>
+            <div class="back-card">
+              <h1><span class="text">Overview of the Recipe</span></h1>
+              <h2><span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, neque? Quod quisquam quasi veritatis dolorem dolorum sint iusto laborum, provident, quam neque odio corrupti minus quas optio molestiae numquam illo, est corporis maxime voluptatem similique ut. Quas, veritatis sequi. Culpa.</span></h2>
+            </div>
+            <div class="tooltipheart">
+              <i class="fa-solid fa-heart"></i>
+              <span class="tooltiptext">Add to favourites</span>
+            </div>
+          </div>
+          <div class="card recipe2" id="recipe2">
+            <div class="front-card">
+              <h1>Chicken Adobo</h1>
+              <a href="Adobo (1).html" target="_blank">
+                <h2 data-translate="view_all_recipe">View all Recipe</h2>
+              </a>
+            </div>
+            <div class="back-card">
+              <h1><span class="text">Overview of the Recipe</span></h1>
+              <h2><span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, neque? Quod quisquam quasi veritatis dolorem dolorum sint iusto laborum, provident, quam neque odio corrupti minus quas optio molestiae numquam illo, est corporis maxime voluptatem similique ut. Quas, veritatis sequi. Culpa.</span></h2>
+            </div>
+            <div class="tooltipheart">
+              <i class="fa-solid fa-heart"></i>
+              <span class="tooltiptext">Add to favourites</span>
+            </div>
+          </div>
+          <div class="card recipe3" id="recipe3">
+            <div class="front-card">
+              <h1>Beef Adobo</h1>
+              <h2 data-translate="view_all_recipe">View all Recipe</h2>
+            </div>
+            <div class="back-card">
+              <h1><span class="text">Overview of the Recipe</span></h1>
+              <h2><span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, neque? Quod quisquam quasi veritatis dolorem dolorum sint iusto laborum, provident, quam neque odio corrupti minus quas optio molestiae numquam illo, est corporis maxime voluptatem similique ut. Quas, veritatis sequi. Culpa.</span></h2>
+            </div>
+            <div class="tooltipheart">
+              <i class="fa-solid fa-heart"></i>
+              <span class="tooltiptext">Add to favourites</span>
+            </div>
+          </div>
+          <div class="card recipe4" id="recipe4">
+            <div class="front-card">
+              <h1>Recipe & Menus</h1>
+              <h2 data-translate="view_all_recipe">View all Recipe</h2>
+            </div>
+            <div class="back-card">
+              <h1><span class="text">Overview of the Recipe</span></h1>
+              <h2><span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, neque? Quod quisquam quasi veritatis dolorem dolorum sint iusto laborum, provident, quam neque odio corrupti minus quas optio molestiae numquam illo, est corporis maxime voluptatem similique ut. Quas, veritatis sequi. Culpa.</span></h2>
+            </div>
+            <div class="tooltipheart">
+              <i class="fa-solid fa-heart"></i>
+              <span class="tooltiptext">Add to favourites</span>
+            </div>
+          </div>
+          <div class="card recipe5" id="recipe5">
+            <div class="front-card">
+              <h1>Recipe & Menus</h1>
+              <h2 data-translate="view_all_recipe">View all Recipe</h2>
+            </div>
+            <div class="back-card">
+              <h1><span class="text">Overview of the Recipe</span></h1>
+              <h2><span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, neque? Quod quisquam quasi veritatis dolorem dolorum sint iusto laborum, provident, quam neque odio corrupti minus quas optio molestiae numquam illo, est corporis maxime voluptatem similique ut. Quas, veritatis sequi. Culpa.</span></h2>
+            </div>
+            <div class="tooltipheart">
+              <i class="fa-solid fa-heart"></i>
+              <span class="tooltiptext">Add to favourites</span>
+            </div>
+          </div>
+          <div class="card recipe6" id="recipe6">
+            <div class="front-card">
+              <h1>Recipe & Menus</h1>
+              <h2 data-translate="view_all_recipe">View all Recipe</h2>
+            </div>
+            <div class="back-card">
+              <h1><span class="text">Overview of the Recipe</span></h1>
+              <h2><span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, neque? Quod quisquam quasi veritatis dolorem dolorum sint iusto laborum, provident, quam neque odio corrupti minus quas optio molestiae numquam illo, est corporis maxime voluptatem similique ut. Quas, veritatis sequi. Culpa.</span></h2>
+            </div>
+            <div class="tooltipheart">
+              <i class="fa-solid fa-heart"></i>
+              <span class="tooltiptext">Add to favourites</span>
+            </div>
+          </div>
+        </article>
+        <div class="no-results-message">
+          <img src="no-results-removebg-preview.png" alt="no-results-image">
+          <h2>Oops! We couldn't find any matching recipes.</h2>
+          <p>But don't worry, we're always adding new ones. Feel free to explore our other delicious recipes!</p>
+        </div>
+        <div class="button">
+          <a href="#" data-translate="view_all_recipe">View All Recipe</a>
+        </div>
+      </section>
+      
+
+      <section class="video-tutorial reveal" id="video-tutorial">
+        <video id="slider1" autoplay muted loop>
+            <source src="../video/cooking1.mp4" type="video/mp4">
+        </video>  
+        <ul class="navigation12">
+        </ul>
+        <button id="prevButton" class="slider-button"><i>&lt;</i></button>
+        <button id="nextButton" class="slider-button"><i>&gt;</i></button>
+        
+        <button id="pauseButton" class="slider-button"><i class="fas fa-pause"></i></button>
+      </section>
+      
+      <section class="instagram reveal" id="blog">
+        <div class="instagram-container">
+          <article class="text-container3">
+            <h1 data-translate="check_our_foodieland">Check our @Foodieland On<br>Instagram</h1>
+            <p data-translate="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, amet illo iusto velit eligendi dignissimos sequi quod, error, consequatur repudiandae dolorem.</p>
+          </article>
+          <div class="cards-container2">
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+          </div>
+        </div>
+        <div class="btn-wrapper">
+          <div class="btn2">
+            <a href="#" data-translate="visit_our_instagram">Visit Our Instagram</a>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section reveal" id="contact-section">
+        <div class="contact-container">
+          <div class="text-container3">
+            <h1 data-translate="contact_us">Contact Us</h1>
+            <h2 data-translate="lorem_ipsum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi aspernatur deleniti dicta quisquam, iste nesciunt impedit ex at? Recusandae, id porro!</h2>
+          </div>
+          <form>
+            <input type="text" placeholder="Name" aria-label="First Name">
+            <input type="text" placeholder="Last Name" aria-label="Last Name">
+            <input type="email" placeholder="Email" aria-label="Email">
+            <textarea placeholder="Your Message" aria-label="Your Message"></textarea>
+          </form>
+          <div class="submit-button">
+            <a href="#" data-translate="submit">Submit</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="main-content">
+    <div class="container">
+      <p data-translate="contact_us_info">Contact Us: email@email.com | Phone: (123) 456-7890</p>
+      <p>&copy; 2024 O'Chill. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="Adobohomearrowfunc.js"></script>
+  <!-- <script src="Adobohomerecent.js"></script> -->
+</body>
+</html>
